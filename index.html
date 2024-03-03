@@ -3,10 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz App</title>
-    <link rel="stylesheet" href="style.css">
+    <title>My Quiz App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css"/>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column; 
+            justify-content: flex-start; /* Aligning content to the start */
+            align-items: center; /* Centering content horizontally */
+        }
+        #quiz-container {
+            text-align: center;
+            width: 100%; 
+            max-width: 600px; 
+            margin-top: 20px; 
+        }
+        .question-style, .answer-btn, .feedback-style {
+            width: 100%;
+            margin: auto;
+        }
+        h1 {
+            width: 100%;
+            text-align: center;
+            margin-top: 20px; 
+        }
+    </style>
 </head>
 <body>
+    <h1>My Quiz App</h1> <!-- This is the title -->
     <div id="quiz-container">
         <div id="question" class="question-style"></div>
         <button id="true" class="answer-btn">True</button>
@@ -19,4 +46,3 @@
     <script src="app.js"></script>
 </body>
 </html>
-

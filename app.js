@@ -1,10 +1,11 @@
 let currentQuestionIndex = 0;
-let score = 0; // Initialize score
+let score = 0; // Initializing score
 
 function displayQuestion() {
     const questionElement = document.getElementById('question');
     const currentQuestion = quiz_Questions[currentQuestionIndex];
-    questionElement.innerText = `${currentQuestionIndex + 1}. ${currentQuestion.question}`;
+    // Updated to show current question number out of total questions
+    questionElement.innerText = `${currentQuestionIndex + 1}/${quiz_Questions.length}. ${currentQuestion.question}`;
 }
 
 function checkAnswer(userAnswer) {
@@ -12,7 +13,7 @@ function checkAnswer(userAnswer) {
     const answerElement = document.getElementById('answer');
     if (userAnswer === correctAnswer) {
         answerElement.innerText = "Correct!";
-        score++; // Increment score if answer is correct
+        score++; // Incrementing  score if answer is correct
     } else {
         answerElement.innerText = "Incorrect!";
     }
@@ -22,6 +23,7 @@ function checkAnswer(userAnswer) {
             displayQuestion();
             answerElement.innerText = "";
         } else {
+            // Updated to show final score out of total questions
             document.getElementById('quiz-container').innerHTML = `<div id="score">Your score: ${score}/${quiz_Questions.length}</div><button id="restart">Restart</button>`;
             document.getElementById('restart').addEventListener('click', restartQuiz);
         }
